@@ -4,7 +4,7 @@
   "description": "Solution for the node exercise",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx jest --runInBand",
     "lint": "npx standard",
     "lint:fix": "npx standard --fix",
     "serve": "node server.js"
@@ -28,8 +28,12 @@
     "serverless-http": "^2.7.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "jest": "^26.6.3",
     "serverless": "^2.30.3",
-    "standard": "^16.0.3"
+    "standard": "^16.0.3",
+    "superagent": "^3.8.3",
+    "supertest": "^6.1.3"
   }
 }
