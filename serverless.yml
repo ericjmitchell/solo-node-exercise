@@ -9,6 +9,7 @@ provider:
 functions:
  server:
    handler: lambda.server
+   timeout: 30
    events:
      - http: ANY /
      - http: 'ANY {proxy+}'

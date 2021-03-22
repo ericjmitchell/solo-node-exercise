@@ -7,7 +7,8 @@
     "test": "npx jest --runInBand",
     "lint": "npx standard",
     "lint:fix": "npx standard --fix",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "deploy": "npx serverless deploy"
   },
   "repository": {
     "type": "git",

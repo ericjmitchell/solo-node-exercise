@@ -87,3 +87,9 @@ We want to know that you can:
 	]
     ```
 
+
+## Running
+This exercise can be tested in the following ways:
+* Run 'npm test' to run the test cases
+* Run 'npm run serve' to start the express server locally. Then send requests to http://localhost:3000/people or http://localhost:3000/planets
+* Hit api in AWS: Api is being hosted on AWS and can be reached at https://03hsr544yi.execute-api.us-east-1.amazonaws.com/dev/people or https://03hsr544yi.execute-api.us-east-1.amazonaws.com/dev/planets
