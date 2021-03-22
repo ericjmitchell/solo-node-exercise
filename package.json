@@ -1,0 +1,35 @@
+{
+  "name": "solo-node-exercise",
+  "version": "1.0.0",
+  "description": "Solution for the node exercise",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "npx standard",
+    "lint:fix": "npx standard --fix",
+    "serve": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericjmitchell/solo-node-exercise.git"
+  },
+  "author": "Eric Mitchell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericjmitchell/solo-node-exercise/issues"
+  },
+  "homepage": "https://github.com/ericjmitchell/solo-node-exercise#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "serverless": "^2.30.3",
+    "standard": "^16.0.3"
+  }
+}
