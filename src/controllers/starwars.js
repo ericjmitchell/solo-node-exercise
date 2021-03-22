@@ -1,4 +1,4 @@
-const { getPeopleData, getPlanetsData } = require('../datasources/starwars')
+const { getPeopleData, getPlanetsData, getPersonData } = require('../datasources/starwars')
 const sorters = require('../helpers/sorters')
 
 const getPeople = async (req, res) => {
@@ -23,7 +23,17 @@ const getPeople = async (req, res) => {
 const getPlanets = async (req, res) => {
   const planets = await getPlanetsData()
 
-  res.json(planets)
+  const updatedPlanets = await Promise.all(planets.map(async (p) => {
+    p.residents = await Promise.all(p.residents.map(async (r) => {
+      const person = await getPersonData(r)
+
+      return person.name
+    }))
+
+    return p
+  }))
+
+  res.json(updatedPlanets)
 }
 
 module.exports = {

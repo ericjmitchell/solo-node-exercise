@@ -1,3 +1,3 @@
 global.XMLHttpRequest = undefined
 
-jest.setTimeout(10000)
+jest.setTimeout(15000)

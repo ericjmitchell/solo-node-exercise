@@ -8,15 +8,6 @@ const sortName = (a, b) => {
   return 0
 }
 
-// Found this at https://stackoverflow.com/questions/17557807/javascript-how-do-you-sort-an-array-that-includes-nans
-const sortNumber = (a, b) => {
-  if(isNaN(a)) { 
-    return 1-isNaN(b);
-  } else {
-    return a-b; 
-  }
-}
-
 const sortHeight = (a, b) => {
   const aNum = a.height === 'unknown' ? -1 : parseInt(a.height)
   const bNum = b.height === 'unknown' ? -1 : parseInt(b.height)

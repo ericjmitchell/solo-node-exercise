@@ -24,7 +24,14 @@ const getPlanetsData = async () => {
   return retrieveArray('planets')
 }
 
+const getPersonData = async (url) => {
+  const resp = await axios.get(url)
+
+  return resp.data
+}
+
 module.exports = {
   getPeopleData,
-  getPlanetsData
+  getPlanetsData,
+  getPersonData
 }

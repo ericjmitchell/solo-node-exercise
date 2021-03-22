@@ -7,6 +7,6 @@ describe('Test the planets path', () => {
     expect(response.statusCode).toBe(200)
     expect(response.body.length).toBeGreaterThan(10)
 
-    expect(response.body[0].residents[0]).toBe('Leia Organa')
+    expect(response.body[0].residents[0]).toBe('Luke Skywalker')
   })
 })
