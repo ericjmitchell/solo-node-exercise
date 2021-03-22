@@ -7,7 +7,10 @@ const getPeople = async (req, res) => {
   // Validate sortBy parameter
   if (sortBy && !Object.keys(sorters).includes(sortBy)) {
     res.status(400)
-    res.send(`sortBy parameter must be in [${Object.keys(sorters)}]`)
+    res.json({
+      success: false,
+      message: `sortBy parameter must be in [${Object.keys(sorters)}]`
+    })
     return
   }
 
@@ -17,7 +20,10 @@ const getPeople = async (req, res) => {
     people = people.sort(sorters[sortBy])
   }
 
-  res.json(people)
+  res.json({
+    success: true,
+    results: people
+  })
 }
 
 const getPlanets = async (req, res) => {
@@ -33,7 +39,10 @@ const getPlanets = async (req, res) => {
     return p
   }))
 
-  res.json(updatedPlanets)
+  res.json({
+    success: true,
+    results: updatedPlanets
+  })
 }
 
 module.exports = {
