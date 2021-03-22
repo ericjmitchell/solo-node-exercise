@@ -1,15 +1,29 @@
 const { getPeopleData, getPlanetsData } = require('../datasources/starwars')
+const sorters = require('../helpers/sorters')
 
-const getPeople = async (res, req) => {
-  const people = await getPeopleData()
+const getPeople = async (req, res) => {
+  const { sortBy } = req.query
 
-  req.json(people)
+  // Validate sortBy parameter
+  if (sortBy && !Object.keys(sorters).includes(sortBy)) {
+    res.status(400)
+    res.send(`sortBy parameter must be in [${Object.keys(sorters)}]`)
+    return
+  }
+
+  let people = await getPeopleData()
+
+  if (sortBy) {
+    people = people.sort(sorters[sortBy])
+  }
+
+  res.json(people)
 }
 
-const getPlanets = async (res, req) => {
+const getPlanets = async (req, res) => {
   const planets = await getPlanetsData()
 
-  req.json(planets)
+  res.json(planets)
 }
 
 module.exports = {

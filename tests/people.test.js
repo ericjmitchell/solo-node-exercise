@@ -31,6 +31,6 @@ describe('Test the people path', () => {
 
     expect(response.statusCode).toBe(200)
     expect(response.body.length).toBeGreaterThan(10)
-    expect(response.body[0].name).toBe('Grievous')
+    expect(response.body[0].name).toBe('Jabba Desilijic Tiure')
   })
 })
